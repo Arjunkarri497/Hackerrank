@@ -1,0 +1,23 @@
+# Enter your code here. Read input from STDIN. Print output to STDO
+from itertools import combinations
+
+# Read inputs
+n = int(input().strip())
+letters = input().split()
+k = int(input().strip())
+
+# Generate all index combinations
+indices = list(range(n))
+all_combinations = list(combinations(indices, k))
+
+# Count combinations that contain at least one 'a'
+count_with_a = 0
+for combo in all_combinations:
+    if any(letters[i] == 'a' for i in combo):
+        count_with_a += 1
+
+# Calculate probability
+probability = count_with_a / len(all_combinations)
+
+# Print result rounded to 3 decimal places
+print(f"{probability:.3f}")
