@@ -1,0 +1,4 @@
+/*
+Enter your query here.
+*/
+SELECT REPEAT('* ',21-ROW_NUMBER() OVER()) FROM INFORMATION_SCHEMA.COLUMNS LIMIT 20;
